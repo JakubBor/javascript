@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praca z oknami - Wieniawa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .task {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Praca z oknami - Wieniawa</h1>
+
+    <!-- Przyciski do zadań -->
+    <button onclick="openTaskWindow()">Zadanie 5 - Wieniawa</button>
+
+    <div class="task" id="task-container" style="display: none;">
+        <h2>Obliczamy układ</h2>
+        <button onclick="WinOpen_Borodzicz_1('grafika1')">Grafika 1</button>
+        <button onclick="WinOpen_Borodzicz_1('grafika2')">Grafika 2</button>
+        <button onclick="WinOpen_Borodzicz_1('grafika3')">Grafika 3</button>
+        <button onclick="WinOpen_Borodzicz_1('grafika4')">Grafika 4</button>
+    </div>
+
+    <script>
+        // Funkcja otwierająca okienko z zadaniem
+        function openTaskWindow() {
+            document.getElementById("task-container").style.display = "block";
+        }
+
+        // Funkcja otwierająca nowe okna z grafiką i opisem
+        function WinOpen_Borodzicz_1(grafika) {
+            let imageUrl = '';
+            let description = '';
+            let color = '';
+            let width = 400;
+            let height = 400;
+            let top = 100;
+            let left = 100;
+
+            switch (grafika) {
+                case 'grafika1':
+                    imageUrl = 'https://example.com/grafika1.jpg';  // Zastąp właściwym URL do grafiki
+                    description = 'To jest pierwsza śmieszna grafika.';
+                    color = 'red';
+                    top = 100;
+                    left = 100;
+                    break;
+                case 'grafika2':
+                    imageUrl = 'https://example.com/grafika2.jpg';  // Zastąp właściwym URL do grafiki
+                    description = 'Grafika 2 przedstawia zabawną sytuację.';
+                    color = 'blue';
+                    top = 150;
+                    left = 550;
+                    break;
+                case 'grafika3':
+                    imageUrl = 'https://example.com/grafika3.jpg';  // Zastąp właściwym URL do grafiki
+                    description = 'Grafika 3: Coś się tu wydarzyło!';
+                    color = 'green';
+                    top = 200;
+                    left = 100;
+                    break;
+                case 'grafika4':
+                    imageUrl = 'https://example.com/grafika4.jpg';  // Zastąp właściwym URL do grafiki
+                    description = 'Ostatnia grafika z humorystycznym finałem.';
+                    color = 'purple';
+                    top = 250;
+                    left = 550;
+                    break;
+            }
+
+            // Otwarcie nowego okna z grafiką i opisem
+            let newWindow = window.open("", grafika, `width=${width},height=${height},top=${top},left=${left}`);
+            newWindow.document.write(`
+                <html>
+                    <head>
+                        <title>${grafika}</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; text-align: center; }
+                            p { color: ${color}; font-size: 18px; }
+                            img { max-width: 100%; height: auto; }
+                        </style>
+                    </head>
+                    <body>
+                        <h2>${grafika}</h2>
+                        <img src="${imageUrl}" alt="${grafika}">
+                        <p>${description}</p>
+                    </body>
+                </html>
+            `);
+        }
+
+        // Funkcja zamykająca okno (jeśli byłaby potrzebna)
+        function okno_zamknij_Borodzicz_1() {
+            window.close();
+        }
+    </script>
+</body>
+</html>
