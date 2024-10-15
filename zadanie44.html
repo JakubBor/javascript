@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <title>Jan Kowalski - Klasa 3B</title>
+    <script type="text/javascript">
+        // Funkcja otwierająca okno dla zadania 3
+        function WinOpen_z3() {
+            window.open("zadanie3.html", "okienko_z3", "toolbar=no,directories=no,menubar=no,height=380,width=160,top=200,left=200");
+        }
+
+        // Funkcja otwierająca okno dla zadania 4
+        function WinOpen_z4() {
+            window.open("zadanie4.html", "okienko_z4", "toolbar=no,directories=no,menubar=no,height=600,width=800,top=200,left=400"); // Zmieniono wymiary okna
+        }
+
+        // Funkcja zamykająca okno
+        function okno_zamknij() {
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <h1 style="font-size: 2cm;">Autor szkieletu zaliczeniowego: Jan Kowalski</h1> <!-- Identyfikacja autora -->
+
+    <form>
+        <!-- Przycisk do zadania 3 -->
+        <input type="button" name="zadanie3" value="zadanie 3 - Kowalski" onclick="WinOpen_z3()">
+
+        <!-- Przycisk do zadania 4 -->
+        <input type="button" name="zadanie4" value="zadanie 4 - Kowalski" onclick="WinOpen_z4()">
+
+        <!-- Przycisk zamykający okno -->
+        <input type="button" value="Zamknij okno" onclick="okno_zamknij()">
+    </form>
+</body>
+</html>
