@@ -1,0 +1,27 @@
+<!DOCTYPE html>    
+<head>  
+
+  <body>
+   <b>
+    <h5 style="font-size: 0.7cm;">Zastosowanie:</h5>
+     </b>
+    <h1 style="font-size: 0.5cm;">Jest używany, jeśli chcemy zapytać użytkownika o weryfikacje, lub akceptację jakichś danych. </h1>
+    <h1 style="font-size: 0.5cm;">Użytkownik musi nacisnąć  „OK.” w celu akceptacji bądź „Cancel” w celu odrzucenia. Jeżeli zostanie</h1>
+    <h1 style="font-size: 0.5cm;">wybrane „OK.” metoda zwraca true w przeciwnym wypadku false.  </h1>
+  </body>
+  
+  <script type="text/javascript">  
+   function show_confirm()   
+       {  
+         var r=confirm("Naciśnij klawisz");  
+           if (r==true)   
+                {  document.write("Nacisnąłeś OK!");  }  
+           else   
+             {  document.write("Nacisnąłeś Cancel!");  }  
+      }  
+</script>  
+</head>  
+ <body> 
+     <input type="button" onclick="show_confirm()" value="Pokaż confirm box" />   
+ </body>  
+</html>  
