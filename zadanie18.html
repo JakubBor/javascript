@@ -1,0 +1,34 @@
+=<!DOCTYPE html> 
+ <head> 
+ <title> Użycie fukcji </title> 
+ <meta charset="utf-8"> 
+ </head> 
+<body>
+ <div style="color:navy;font-size:50px;">
+ <script language="JavaScript">
+ var a=parseFloat(prompt("a=",""));
+ var b=parseFloat(prompt("b=",""));
+ function suma_bor(a, b) {
+ return a + b;
+ }
+ document.write("suma="+suma_bor(a,b)+"<br>");
+  function odejmowanie_bor(a, b) {
+    return a - b;
+  }
+ document.write("różnica="+odejmowanie_bor(a,b)+"<br>");
+  function mnozenie_bor(a, b) {
+    return a * b;
+  }
+document.write("iloczyn="+mnozenie_bor(a,b)+"<br>");
+function od_kwadratu_bor(a) {
+    return a * a;
+  }
+document.write("kwadratA="+od_kwadratu_bor(a)+"<br>");
+function od_kwadratu_bor(b) {
+    return b * b;
+  }
+document.write("kwadratB="+od_kwadratu_bor(b)+"<br>");
+</script>
+</div>
+</body>
+</html>
