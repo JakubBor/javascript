@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+ <head>
+ <title> Użycie fukcji </title>
+ <meta charset="utf-8">
+ </head>
+<body>
+ <div style="color:navy;font-size:50px;">
+ <script language="JavaScript">
+ var a=parseFloat(prompt("a=",""));
+ var b=parseFloat(prompt("b=",""));
+ function suma_bor(a, b) {
+ return a + b;
+ }
+ function odejmowanie_bor(a,b) {
+    return a-b;
+ }
+ function mnozenie_bor(a,b) {
+    return a*b;
+ }
+ function od_kwadratu_bor(a,b) {
+    return `${a}^2 = ${a*a}<br>${b}^2 = ${b*b}`;
+ }
+ document.write("suma="+suma_bor(a,b)+"<br>");
+ document.write("odejmowanie="+odejmowanie_bor(a,b)+"<br>");
+ document.write("mnożenie="+mnozenie_bor(a,b)+"<br>");
+ document.write("kwadrat:<br>"+od_kwadratu_bor(a,b)+"<br>");
+</script>
+</div>
+</body>
+</html>
