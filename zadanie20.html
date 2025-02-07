@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    var xa_bor = parseFloat(prompt("Podaj xa"))
+    var ya_bor = parseFloat(prompt("Podaj ya"))
+    var xb_bor = parseFloat(prompt("Podaj xb"))
+    var yb_bor = parseFloat(prompt("Podaj yb"))
+    var xc_bor = parseFloat(prompt("Podaj xc"))
+    var yc_bor = parseFloat(prompt("Podaj yc"))
+    document.getElementById("result").innerHTML = `AB=${AB_bor().toFixed(2)} BC=${BC_bor().toFixed(2)} AC=${AC_bor().toFixed(2)}`;
+
+    function AB_bor() {
+        return Math.sqrt(Math.pow(xb_bor-xa_bor, 2) + Math.pow(yb_bor-ya_bor,2));
+    }
+
+    function BC_bor() {
+        return Math.sqrt(Math.pow(xc_bor-xb_bor, 2) + Math.pow(yc_bor-yb_bor,2));
+    }
+
+    function AC_bor() {
+        return Math.sqrt(Math.pow(xc_bor-xa_bor, 2)+ Math.pow(yc_bor-ya_bor,2));
+    }
+
+    console.log(AB_bor());
+</script>
+</html>
