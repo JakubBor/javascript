@@ -10,13 +10,13 @@
             this.ladownosc = _ladownosc;
             this.moc_silnika = _moc_silnika;
             this.zawrotnosc = _zawrotnosc;
-             {
+            this.Ciezarowka_wyswietl_nazwisko =function() { 
                 document.write(`Ładowność ciężarówki ${this.ladownosc}, moc silnika ${this.moc_silnika}  ${this.zawrotnosc} zawrotność`);
             }
         }
 
         let Ciezarowka1 = new Ciezarowka("12 000kg", "420KM", "8,5m");
-        
+        Ciezarowka1.Ciezarowka_wyswietl_nazwisko()
     </script>
 </body>
 </html>
