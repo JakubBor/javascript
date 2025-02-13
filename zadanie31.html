@@ -6,23 +6,23 @@
 </head>
 <body>
     <script>
-        function Autobus(_ilu_pasazerow, _nazwa_linii, _marka) {
-            this.ilu_pasazerow = _ilu_pasazerow;
-            this.nazwa_linii = _nazwa_linii;
-            this.marka = _marka;
-            this.Autobus_wyswietl_Borodzicz =function() {
-                document.write(`Autobus marki ${this.marka}, linia ${this.nazwa_linii} przewosi ${this.ilu_pasazerow} pasażerów`);
+        function Ciezarowka(_ladownosc, _moc_silnika, _zawrotnosc) {
+            this.ladownosc = _ladownosc;
+            this.moc_silnika = _moc_silnika;
+            this.zawrotnosc = _zawrotnosc;
+            this.Ciezarowka_wyswietl_Borodzicz =function() {
+                document.write(`Ładowność ciężarówki ${this.ladownosc}, moc silnika ${this.moc_silnika}  ${this.zawrotnosc} zawrotność`);
             }
         }
 
-        let autobus1 = new Autobus(100, "131 Matemblewo", "Solaris");
-        autobus1.Autobus_wyswietl_warkusz();
+        let Ciezarowka1 = new Ciezarowka("12 000kg", "420KM", "8,5m");
+        Ciezarowka1.Ciezarowka_wyswietl_Borodzicz();
 
         Ciezarowka1.srednia_predkosc =80;
-        Ciezarowka1.Autobus_pokaz_Borodzicz = function() {
+        Ciezarowka1.Ciezarowka_pokaz_Borodzicz = function() {
             document.write(`<br>Ciezarowka jedzie ze średnią prędkością ${this.srednia_predkosc} km/h`);
         }
-        Ciezarowka1.Autobus_pokaz_Borodzicz();
+        Ciezarowka1.Ciezarowka_pokaz_Borodzicz();
     </script>
 </body>
 </html>
