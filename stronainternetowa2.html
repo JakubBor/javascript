@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bravico.com</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- HERO SECTION -->
+  <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold">Welcome to Bravico.com</h1>
+    <p class="mt-4 text-lg md:text-xl">We focus on what matters: your results.</p>
+    <a href="#contact" class="mt-6 inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">Contact Us</a>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="content" class="max-w-3xl mx-auto py-10 px-4 space-y-8"></main>
+
+  <!-- CONTACT FORM -->
+  <section id="contact" class="max-w-xl mx-auto bg-white shadow-md rounded-lg p-8 mt-16 mb-20">
+    <h2 class="text-2xl font-bold mb-4">📬 Get in Touch</h2>
+    <form id="contactForm" class="space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full border border-gray-300 rounded px-4 py-2" required>
+      <input type="email" placeholder="Your Email" class="w-full border border-gray-300 rounded px-4 py-2" required>
+      <textarea placeholder="Your Message" rows="4" class="w-full border border-gray-300 rounded px-4 py-2" required></textarea>
+      <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    // Data for sections
+    const sectionsData = [
+      {
+        title: "🚀 Quick and Clear",
+        text: "No endless info dumps. Simple, direct, and easy to navigate. We don’t overload with <strong>wordy paragraphs</strong>."
+      },
+      {
+        title: "🎯 Your Goals First",
+        text: "We don’t push our brand—we help you shine. Clients care about their own success, not our logo."
+      },
+      {
+        title: "💥 Strong Headlines",
+        text: "Catch attention fast with headlines that pop. <strong>Strong headline!</strong>"
+      },
+      {
+        title: "🖼 Visuals That Sell",
+        text: "Images and GIFs help tell your story and lead to action—not just decoration. Relevant and real images only."
+      },
+      {
+        title: "🗣 Natural, Human Copy",
+        text: "We sound like a real person, not a robot. Nothing aggressive or salesy. Just a helpful conversation."
+      },
+      {
+        title: "👀 Eliminate Distractions",
+        text: "Remove clutter. Guide the user to the goal without pulling them away."
+      },
+      {
+        title: "🖼 Real, Relevant Images",
+        text: "Pictures are purposeful. If it’s just decoration, we ditch it. Real customers only."
+      },
+      {
+        title: "🎨 Clear Contrast",
+        text: "Dark text on light background or vice versa. If they can’t read it, they’ll leave."
+      },
+      {
+        title: "📣 Message Over Website Beauty",
+        text: "Design supports the message. Conversion > Aesthetics. Every word pushes the user forward."
+      },
+      {
+        title: "📊 Show Client Results",
+        text: "Each section answers: 'How does this help the client win?' No fluff, just proof."
+      },
+      {
+        title: "🧠 Smart AI, Clear Intent",
+        text: "Every AI use supports your offer—no gimmicks. People judge by relevance and results."
+      }
+    ];
+
+    const contentDiv = document.getElementById('content');
+
+    sectionsData.forEach((section, index) => {
+      const sec = document.createElement('section');
+      sec.className = 'bg-white p-6 rounded-lg shadow-md fade-in';
+      sec.innerHTML = `<h2 class='text-xl font-bold mb-2'>${section.title}</h2><p>${section.text}</p>`;
+      contentDiv.appendChild(sec);
+    });
+
+    // Fade in effect on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Contact form basic handler
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you shortly.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
