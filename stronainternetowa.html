@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bravico.com</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta a {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cta a:hover {
+      background-color: #e65c00;
+    }
+
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Bravico.com</h1>
+    <p>We focus on what matters: your results.</p>
+  </header>
+
+  <div id="content"></div>
+
+  <section class="cta">
+    <h2>✅ Clear Call to Action</h2>
+    <p>End every page with a clear next step.</p>
+    <a href="#">Contact Us Now</a>
+  </section>
+
+  <script>
+    const sectionsData = [
+      {
+        title: "🚀 Quick and Clear",
+        text: "No endless info dumps. Simple, direct, and easy to navigate. We don’t overload with <span class='highlight'>wordy paragraphs</span>."
+      },
+      {
+        title: "🎯 Your Goals First",
+        text: "We don’t push our brand—we help you shine. Clients care about their own success, not our logo."
+      },
+      {
+        title: "💥 Strong Headlines",
+        text: "Catch attention fast with headlines that pop. <a href=\"#\" class='highlight'>Strong headline!</a>"
+      },
+      {
+        title: "🖼 Visuals That Sell",
+        text: "Images and GIFs help tell your story and lead to action—not just decoration. Relevant and real images only."
+      },
+      {
+        title: "🗣 Natural, Human Copy",
+        text: "We sound like a real person, not a robot. Nothing aggressive or salesy. Just a helpful conversation."
+      },
+      {
+        title: "👀 Eliminate Distractions",
+        text: "Remove clutter. Guide the user to the goal without pulling them away."
+      },
+      {
+        title: "🖼 Real, Relevant Images",
+        text: "Pictures are purposeful. If it’s just decoration, we ditch it. Real customers only."
+      },
+      {
+        title: "🎨 Clear Contrast",
+        text: "Dark text on light background or vice versa. If they can’t read it, they’ll leave."
+      },
+      {
+        title: "📣 Message Over Website Beauty",
+        text: "Design supports the message. Conversion > Aesthetics. Every word pushes the user forward."
+      },
+      {
+        title: "📊 Show Client Results",
+        text: "Each section answers: \"How does this help the client win?\" No fluff, just proof."
+      },
+      {
+        title: "🧠 Smart AI, Clear Intent",
+        text: "Every AI use supports your offer—no gimmicks. People judge by relevance and results."
+      }
+    ];
+
+    const contentDiv = document.getElementById('content');
+
+    sectionsData.forEach(section => {
+      const sec = document.createElement('section');
+      const h2 = document.createElement('h2');
+      const p = document.createElement('p');
+
+      h2.innerHTML = section.title;
+      p.innerHTML = section.text;
+
+      sec.appendChild(h2);
+      sec.appendChild(p);
+
+      contentDiv.appendChild(sec);
+    });
+  </script>
+</body>
+</html>
