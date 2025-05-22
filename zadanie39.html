@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .header {
+            color: green;
+        }
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="header">Menu</p>
+        <p class="red">1-Czerwony</p>
+        <p class="blue">2-Niebieski</p>
+        <input type="text" placeholder="Wpisz kolor..." id="input-color"><br><br>
+        <button onclick="checkColor()">Sprawdź</button>
+        <h1 style="display: hidden;" id="wynik"></h1>
+    </div>
+</body>
+<script>
+    function checkColor() {
+        const inputValue = document.getElementById("input-color").value ?? "0";
+        const wynik = document.getElementById("wynik");
+
+        wynik.style.display = "block";
+
+        if (inputValue == 1 || inputValue.toLowerCase() == "czerwony") {
+            wynik.className = "red";
+            wynik.innerHTML = "Wczytałeś kolor czerwony<br>";
+        } else if (inputValue == 2 || inputValue.toLowerCase() == "niebieski") {
+            wynik.className = "blue";
+            wynik.innerHTML = "Wczytałeś kolor niebieski<br>";
+        }
+    }
+</script>
+</html>
