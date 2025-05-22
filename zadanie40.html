@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Zadanie JavaScript</title>
+    <meta charset="utf-8">
+    <style>
+        h1 {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Proste działania</h1>
+    <br>
+    <br>
+    <h2>Borodzicz 3G</h2>
+    <label for="a">Podaj pierwszą liczbę:</label> <input type="number" id="a">
+    <br><br>
+    <label for="b">Podaj drugą liczbę:</label> <input type="number" id="b">
+    <br><br>
+    <input type="button" value="DODAWANIE" onclick="suma_Bor()">
+    <input type="button" value="ODEJMOWANIE" onclick="roznica_Bor()">
+    <input type="button" value="MNOŻENIE" onclick="iloczyn_Bor()">
+    <input type="button" value="DZIELENIE" onclick="iloraz_Bor()">
+    <input type="button" value="Teoria-Borodzicz" onclick="teoria_Bor()">
+    <div id="wynik" style="margin-top:20px;"></div>
+    <script>
+        function suma_Bor() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (a == "" || b == "") {
+                document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+            } else {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                var suma = a + b;
+                document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + suma;
+            }
+
+        }
+        function roznica_Bor() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (a == "" || b == "") {
+                document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+            } else {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                var roznica = a - b;
+                document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + roznica;
+            }
+        }
+        function iloczyn_Bor() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (a == "" || b == "") {
+                document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+            } else {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                var iloczyn = a * b;
+                document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + iloczyn;
+            }
+        }
+        function iloraz_Bor() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (a == "" || b == "") {
+                document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby.";
+            } else {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                if (b == 0) {
+                    document.getElementById("wynik").innerHTML = "Nie wolno dzielić przez zero.";
+                }
+                else {
+                    var iloraz = a / b;
+                    document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + iloraz;
+                }
+            }
+        }
+
+        function teoria_Bor() {
+            const wytlumaczenia = [
+                {
+                    "name": "Pierwsza linia teorii",
+                    "line": `&lt;label for="a"&gt;Podaj pierwszą liczbę:&lt;/label&gt;&lt;input type="number" id="a"&gt;`,
+                    "result": `wykonanie numerycznego pola formularza z opisem 'Podaj pierwszą liczbę:' a nazwa pola to 'a'`,
+                },
+                {
+                    "name": "Druga linia teorii",
+                    "line": `&lt;input type="button" value="DODAWANIE" onclick="suma()"&gt;`,
+                    "result": `Wykonanie przycisku o nazwie DODAWANIE i z takim samym napisem, kliknięcie myszką uruchamia funkcję suma_Bor(). `
+                }, 
+                {
+                    "name": "Trzecia linia teorii",
+                    "line": `var a = document.getElementById("a").value;`,
+                    "result": `wpisanie do zmiennej "a" Bortości z elementu o Id "a" (zbieżność nazw)`
+                },
+                {
+                    "name": "CzBorta linia teorii",
+                    "line": `if (a == "" || b == "")`,
+                    "result": `sprawdzenie czy pola "a" lub "b" są puste.`
+                }, 
+                {
+                    "name": "Piąta linia teorii",
+                    "line": `document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + suma;`,
+                    "result": `pobranie Bortości Id o nazwie <b>"wynik"</b> i wyprowadzenie w oknie przeglądarki tekstu "Wynik działania wynosi: " oraz Bortości zmiennej <b>suma</b>;`
+                }
+            ];
+
+            for (let i=0; i < wytlumaczenia.length; i++) {
+                let wytlumaczenie = wytlumaczenia[i];
+                document.write(`<font color="green" size=4>${wytlumaczenie.name}</font><br><font color="red" size=4>${wytlumaczenie.line}</font><br><font color="green" size=4>wytłumaczenie</font><br><font color="red" size=4>${wytlumaczenie.result}</font><br><br>`)
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
